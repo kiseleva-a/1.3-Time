@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 }
 fun agoToText(inputTime: Int):String = when {
     inputTime in 0..60 -> "был(а) только что"
-    inputTime / 60 % 10 == 1 && inputTime /60 % 10 != 11 -> {"был(а) " + inputTime/60 + " минуту назад"}
+    inputTime / 60 % 10 == 1 && inputTime / 60 != 11 -> {"был(а) " + inputTime/60 + " минуту назад"}
     inputTime / 60 % 10 in 2..4 && inputTime / 60 % 10 !in 12..14 -> {"был(а) " + inputTime/60 + " минуты назад"}
     inputTime in 5 * 60.. 60 * 60 -> {"был(а) " + inputTime/60 + " минут назад"}
     inputTime == 1 * 60 * 60 + 1 || inputTime == 21 * 60 * 60 -> {"был(а) " + inputTime/60/60 + " час назад"}
